@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    touch-action: manipulation;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--branco);
+    justify-content: center;
+    align-items: center;
+}
+
+:root { 
+    --azul: #5271ff;
+    --amarelo: #ffde59;
+    --vermelho: #ff5757;
+    --verde: #00BF63;
+    --branco: #fff;
+    --preto: #000000;
+    --azul-escuro: #161834;
+    --azul-claro: #38b6ff;
+}
+
+section{
+    display: flex;
+    width: 100%;
+}
+
+/* ======= SideBar ======= */
+
+.linhaVermelha {
+    position: absolute;
+
+    width: 30px;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    border: none;
+    box-shadow: none;
+
+    background-color: var(--vermelho);
+    z-index: 2;
+}
+
+
+
+/* ======= Abrindo Navbar ======= */
+
+button{
+    box-shadow: -5px 5px 10px rgb(178, 178, 178);
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    top: 0;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--vermelho);
+    margin: 5px auto;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    gap: 15px;
+    height: 100%;
+}
+
+.btnNav {
+    padding: 12px 35px;
+    color: white;
+    font-size: 14px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: bolder;
+    position: relative;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnNav:hover {
+    transform: scale(1.02);
+}
+
+.btnNav a {
+    text-decoration: none;
+    color: white;
+}
+
+.btnNav a:hover {
+    background-color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    color: white;
+    border: 2px solid transparent;
+    font-size: 14px;
+    font-weight: bolder;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.055);
+    background-color: inherit;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 20px;
+}
+
+.dropdown-content a { 
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    border-radius: 08px;
+    color: inherit;
+    font-weight: bold;
+    border: 2px solid inherit;
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    border-radius: 0px 0px 10px 10px;
+    z-index: 10;
+}
+
+.dropdown:hover .btnInicio {
+    background-color: white;
+    color: var(--azul);
+}
+
+.dropdown:hover .btnCadastro {
+    border-radius: 10px 10px 0px 0px;
+    
+    color: var(--branco);
+}
+
+.cadastro-dropdown a:hover {
+    background-color: white;
+    color: var(--verde);
+}
+
+/* Botoes */
+.btnQuest {
+    border: 2px solid transparent;
+    background-color: var(--vermelho);
+    color: white;
+}
+
+.btnAlunos {
+    border: 2px solid transparent;
+    background-color: var(--azul-claro);
+    color: var(--branco);
+}
+
+.btnInicio {
+    border: 2px solid transparent;
+    background-color: white;
+    color: var(--azul);
+}
+
+.btnVermelho{
+    border: 2px solid transparent;
+    background-color: var(--vermelho);
+    color: var(--branco);
+}
+
+.btnAmarelo{
+    border: 2px solid transparent;
+    background-color: #FFDE59;
+    color: var(--branco);
+}
+
+.inicio-dropdown {
+    background-color: var(--azul);
+}
+
+.btnCadastro {
+    border: 2px solid transparent;
+    background-color: var(--verde);
+    color: white;
+}
+
+.cadastro-dropdown {
+    background-color: var(--verde);
+}
+
+/* Adicionando hover específico para cada botão */
+.btnAmarelo:hover{
+    border: 2px solid transparent;
+    background-color: var(--branco);
+    color: #FFDE59;
+}
+
+.btnQuest:hover {
+    border: 2px solid transparent;
+    background-color: var(--branco);
+    color: var(--vermelho);
+}
+
+.btnAlunos:hover {
+    background-color: white;
+    color: var(--azul-claro);
+}
+
+.btnInicio:hover {
+    background-color: white;
+    color: var(--azul);
+}
+
+.btnVermelho:hover {
+    background-color: var(--branco);
+    color: var(--vermelho);
+}
+
+.btnCadastro:hover {
+    color: var(--verde);
+}
+.cadastro-dropdown a:hover {
+    color: var(--verde);
+}
+
+.btnInicio:hover {
+    color: var(--azul);
+}
+
+.btnCadastro:hover {
+    color: var(--verde);
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        padding: 12px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btnNav {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* ======== Arco-Iris ========  */
+
+.arcoIris {
+    display: flex;
+}
+
+.azul {
+    width: 18vw;
+    height: 18vw;
+    border: 6vw solid var(--azul);
+    border-radius: 0 0 100% 0;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
+
+.amarelo {
+    width: 16vw;
+    height: 16vw;
+    border: 5vw solid var(--amarelo);
+    border-radius: 0 0 100% 0;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
+
+.vermelho {
+    width: 14vw;
+    height: 14vw;
+    border: 4vw solid var(--vermelho);
+    border-radius: 0 0 100% 0;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg); 
+}
+
+/* Media query para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .azul {
+        width: 40vw;
+        height: 40vw;
+        border: 10vw solid var(--azul);
+    }
+
+    .amarelo {
+        width: 34vw;
+        height: 34vw;
+        border: 8vw solid var(--amarelo);
+    }
+
+    .vermelho {
+        width: 28vw;
+        height: 28vw;
+        border: 6vw solid var(--vermelho);
+    }
+}
+
+/* ======== Main ========  */
+
+main{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+
+    padding: 20px;
+
+    margin-left: 40px;
+    margin-right: 20px;
+
+    max-width: 900px;
+    height: auto;
+
+    background-color: #5272ff00;
+}
+
+.box{
+    background-color: #ddd9ce00;
+    border-radius: 20px;
+
+}
+
+.row{
+    margin: 20px;
+}
+
+.boxtext{
+    background-color: #00bf6300;
+}
+
+.boxtext img{
+    width: 100px;
+    height: auto;
+
+    background-color: #00bf6300;
+    transition: 0.5s ease-in-out;
+}
+
+.boxtext .txtlogo{
+    color: #161834c5;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.title{
+    color: #5272ffbd;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.text{
+    color: #6e6b6b;
+}
+
+.btnSobre {
+    position: relative;
+    padding: 12px 35px;
+
+    margin-top: 20px;
+
+    color: white;
+    font-size: 14px;
+    font-weight: bolder;
+
+    border: 2px solid transparent;
+    border-radius: 25px;
+
+    cursor: pointer;
+    overflow: hidden;
+    
+    
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btnSobre:hover {
+    transform: scale(1.02);
+}
+
+.btnSobre a {
+    text-decoration: none;
+    color: white;
+}
+
+.btnSobre a:hover {
+    background-color: transparent;
+}
+
+
+.btnSobreCad{
+    border: 2px solid transparent;
+    background-color: var(--verde);
+    color: white;
+}
+
+.btnSobreCad:hover {
+    background-color: white;
+    color: var(--verde);
+}

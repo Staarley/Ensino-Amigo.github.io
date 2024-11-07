@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    touch-action: manipulation;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--branco);
+    justify-content: center;
+    align-items: center;
+}
+
+:root { 
+    --azul: #5271ff;
+    --amarelo: #ffde59;
+    --vermelho: #ff5757;
+    --verde: #00BF63;
+    --branco: #fff;
+    --preto: #000000;
+    --azul-escuro: #161834;
+    --azul-claro: #38b6ff;
+}
+
+section{
+    display: flex;
+    width: 100%;
+}
+
+/* ======= SideBar ======= */
+
+.linhaVermelha {
+    position: absolute;
+
+    width: 30px;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    border: none;
+    box-shadow: none;
+
+    background-color: var(--vermelho);
+    z-index: 2;
+}
+
+.icons span a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.boxperfil img{
+    width: 100px;
+    height: auto;
+
+    margin-bottom: 2px;
+}
+
+.boximages img{
+    width: 20px;
+    height: auto;
+}
+
+.boxperfil{
+    position: absolute;
+
+    width: 100%;
+    height: 93%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column; /* Alinha as imagens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+
+    background-color: #00bf6300;
+}
+
+.perfil{
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.perfil:hover{
+    transform: scale(1.1);
+}
+
+.images{
+    position: absolute;
+    display: flex;
+
+    width: 100%;
+    height: 8%;
+
+    top: 91%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #00bf6300;
+
+    flex-direction: column; /* Alinha as imagens verticalmente */
+    justify-content: center;
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.config{
+    position: absolute;
+    top: 99%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.config:hover{
+    transform: scale(1.1);
+}
+
+.instagram{
+    margin-bottom: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.instagram:hover{
+    transform: scale(1.1);
+}
+
+.linkedin{
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.linkedin:hover{
+    transform: scale(1.1);
+}
+
+.youtube{
+    margin-bottom: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.youtube:hover{
+    transform: scale(1.1);
+}
+/* ======= Abrindo Navbar ======= */
+
+button{
+    box-shadow: -5px 5px 10px rgb(178, 178, 178);
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    top: 0;
+    z-index: 1;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--vermelho);
+    margin: 5px auto;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    gap: 15px;
+    height: 100%;
+}
+
+.btnNav {
+    padding: 12px 35px;
+    color: white;
+    font-size: 14px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: bolder;
+    position: relative;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnNav:hover {
+    transform: scale(1.02);
+}
+
+.btnNav a {
+    text-decoration: none;
+    color: white;
+}
+
+.btnNav a:hover {
+    background-color: white;
+}
+
+/* Botoes */
+
+.btnInicio {
+    border: 2px solid transparent;
+    background-color: white;
+    color: var(--azul);
+}
+
+.btnSair{
+    border: 2px solid transparent;
+    background-color: var(--vermelho);
+    color: white;
+}
+
+/* Adicionando hover específico para cada botão */
+
+.btnInicio:hover {
+    background-color: white;
+    color: var(--azul);
+}
+
+.btnQuest:hover {
+    background-color: white;
+    color: var(--vermelho);
+}
+
+.btnInicio:hover {
+    color: var(--azul);
+}
+
+.btnQuest:hover {
+    color: var(--vermelho);
+}
+
+.btnSair:hover {
+    background-color: white;
+    color: var(--vermelho);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        padding: 12px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btnNav {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* ======== Arco-Iris ========  */
+
+.arcoIris {
+    display: flex;
+}
+
+.azul {
+    width: 18vw;
+    height: 18vw;
+    border: 6vw solid var(--azul);
+    border-radius: 0 0 100% 0;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
+
+.amarelo {
+    width: 16vw;
+    height: 16vw;
+    border: 5vw solid var(--amarelo);
+    border-radius: 0 0 100% 0;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
+
+.vermelho {
+    width: 14vw;
+    height: 14vw;
+    border: 4vw solid var(--vermelho);
+    border-radius: 0 0 100% 0;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg); 
+}
+
+/* Media query para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .azul {
+        width: 40vw;
+        height: 40vw;
+        border: 10vw solid var(--azul);
+    }
+
+    .amarelo {
+        width: 34vw;
+        height: 34vw;
+        border: 8vw solid var(--amarelo);
+    }
+
+    .vermelho {
+        width: 28vw;
+        height: 28vw;
+        border: 6vw solid var(--vermelho);
+    }
+}
+
+/* ======== Main ========  */
+
+main{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.distance{
+    display: flex;
+}
+
+.box {
+    width: 600px;
+    max-height: 80vh; /* Altura máxima de 80% da altura da viewport */
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin: auto;
+    border-radius: 30px;
+    overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+
+    /* Posicionando a box na base da página */
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+}
+
+/* Esconde a barra de rolagem em navegadores Webkit (Chrome, Safari) */
+.box::-webkit-scrollbar {
+    width: 0; /* Largura da barra de rolagem */
+    height: 0; /* Altura da barra de rolagem */
+}
+
+/* Para Firefox */
+.box {
+    scrollbar-width: none; /* Esconde a barra de rolagem */
+}
+
+/* Para IE e Edge */
+.box {
+    -ms-overflow-style: none; /* Esconde a barra de rolagem */
+}
+
+
+.btnList {
+    padding: 10px 15px;
+    color: white;
+    font-size: 14px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: bolder;
+    position: relative;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnListVerde{
+    background-color: var(--verde);
+}
+
+.btnListVerde:hover{
+    border: 2px solid transparent;
+    background-color: white;
+    color: var(--verde)
+}
+
+form {
+    margin: 0px; /* Margem em torno do formulário */
+    padding: 20px; /* Espaçamento interno do formulário */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: #f9f9f9; /* Cor de fundo leve */
+}
+
+h2 {
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+    font-size: 24px; /* Tamanho do título */
+    color: #333; /* Cor do texto do título */
+}
+
+p {
+    margin-bottom: 15px; /* Espaçamento abaixo do enunciado */
+    font-size: 16px; /* Tamanho do texto do enunciado */
+    color: #666; /* Cor do texto do enunciado */
+}
+
+.opcao {
+    display: block; /* Exibir como bloco para que ocupe toda a largura */
+    margin-bottom: 10px; /* Espaçamento entre as alternativas */
+    padding: 5px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de ponteiro para interação */
+}
+
+.opcao input[type="radio"] {
+    margin-right: 10px; /* Espaçamento entre o botão de rádio e o texto */
+}
+

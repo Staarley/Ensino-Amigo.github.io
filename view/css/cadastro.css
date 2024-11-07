@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    touch-action: manipulation;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--branco);
+    justify-content: center;
+    align-items: center;
+}
+
+:root { 
+    --azul: #5271ff;
+    --amarelo: #ffde59;
+    --vermelho: #ff5757;
+    --verde: #00BF63;
+    --branco: #fff;
+    --preto: #000000;
+    --azul-escuro: #161834;
+    --azul-claro: #38b6ff;
+}
+
+section{
+    display: flex;
+    width: 100%;
+}
+
+/* ======= SideBar ======= */
+
+.linhaVermelha {
+    position: absolute;
+
+    width: 60px;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    border: none;
+    box-shadow: none;
+
+    background-color: var(--vermelho);
+    z-index: 2;
+}
+
+.icons span a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.boxperfil img{
+    width: 30px;
+    height: auto;
+
+    margin-bottom: 2px;
+}
+
+.boximages img{
+    width: 20px;
+    height: auto;
+}
+
+.boximages img{
+    width: 20px;
+    height: auto;
+}
+
+.boxperfil{
+    position: absolute;
+
+    width: 100%;
+    height: 93%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column; /* Alinha as imagens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+
+    background-color: #00bf6300;
+}
+
+.perfil{
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.perfil:hover{
+    transform: scale(1.1);
+}
+
+.images{
+    position: absolute;
+    display: flex;
+
+    width: 100%;
+    height: 8%;
+
+    top: 91%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #00bf6300;
+
+    flex-direction: column; /* Alinha as imagens verticalmente */
+    justify-content: center;
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.config{
+    position: absolute;
+    top: 99%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.config:hover{
+    transform: scale(1.1);
+}
+
+.instagram{
+    margin-bottom: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.instagram:hover{
+    transform: scale(1.1);
+}
+
+.linkedin{
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.linkedin:hover{
+    transform: scale(1.1);
+}
+
+.youtube{
+    margin-bottom: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.youtube:hover{
+    transform: scale(1.1);
+}
+
+
+/* ======= Abrindo Navbar ======= */
+nav {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    top: 0;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--vermelho);
+    margin: 5px auto;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    gap: 15px;
+    height: 100%;
+}
+
+.btnNav {
+    padding: 12px 35px;
+    color: white;
+    font-size: 14px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: bolder;
+    position: relative;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnNav:hover {
+    transform: scale(1.02);
+}
+
+.btnNav a {
+    text-decoration: none;
+    color: white;
+}
+
+.btnNav a:hover {
+    background-color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    color: white;
+    border: 2px solid transparent;
+    font-size: 14px;
+    font-weight: bolder;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.055);
+    background-color: inherit;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 20px;
+}
+
+.dropdown-content a { 
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    border-radius: 20px;
+    color: inherit;
+    font-weight: bold;
+    border: 2px solid inherit;
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown:hover .btnInicio {
+    background-color: white;
+    color: var(--azul);
+}
+
+.inicio-dropdown a:hover {
+    background-color: white;
+    color: var(--azul);
+}
+
+.dropdown:hover .btnCadastro {
+    background-color: white;
+    color: var(--verde);
+}
+
+.cadastro-dropdown a:hover {
+    background-color: white;
+    color: var(--verde);
+}
+
+/* Botoes */
+.btnAlunos {
+    border: 2px solid var(--azul-claro);
+    background-color: var(--azul-claro);
+    color: var(--branco);
+}
+
+.btnInicio {
+    border: 2px solid var(--azul);
+    background-color: var(--azul);
+    color: var(--branco);
+}
+
+
+.btnVermelho{
+    border: 2px solid var(--vermelho);
+    background-color: var(--vermelho);
+    color: var(--branco);
+}
+
+.btnCadastro {
+    border: 2px solid var(--verde);
+    background-color: var(--branco);
+    color:  var(--verde);
+}
+
+.cadastro-dropdown {
+    background-color: var(--verde);
+}
+
+/* Adicionando hover específico para cada botão */
+.btnAlunos:hover {
+    background-color: white;
+    color: var(--azul-claro);
+}
+
+.btnInicio:hover {
+    background-color: white;
+    color: var(--azul);
+}
+
+.btnVermelho:hover {
+    background-color: var(--branco);
+    color: var(--vermelho);
+}
+
+.btnCadastro:hover {
+    color: var(--verde);
+}
+.cadastro-dropdown a:hover {
+    color: var(--verde);
+}
+
+.btnInicio:hover {
+    color: var(--azul);
+}
+
+.btnCadastro:hover {
+    color: var(--verde);
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        padding: 12px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btnNav {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* ======== Arco-Iris ========  */
+
+.arcoIris {
+    display: flex;
+}
+
+.azul {
+    width: 18vw;
+    height: 18vw;
+    border: 6vw solid var(--azul);
+    border-radius: 0 0 100% 0;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
+
+.amarelo {
+    width: 16vw;
+    height: 16vw;
+    border: 5vw solid var(--amarelo);
+    border-radius: 0 0 100% 0;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
+
+.vermelho {
+    width: 14vw;
+    height: 14vw;
+    border: 4vw solid var(--vermelho);
+    border-radius: 0 0 100% 0;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(90deg); 
+}
+
+/* Media query para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .azul {
+        width: 40vw;
+        height: 40vw;
+        border: 10vw solid var(--azul);
+    }
+
+    .amarelo {
+        width: 34vw;
+        height: 34vw;
+        border: 8vw solid var(--amarelo);
+    }
+
+    .vermelho {
+        width: 28vw;
+        height: 28vw;
+        border: 6vw solid var(--vermelho);
+    }
+}
+
+
+/* ======== Main ========  */
+
+main{
+    padding: 0;
+    margin: 0;
+}
+
+.box{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.box1 {
+    position: absolute; 
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 200%;
+    max-width: 500px;
+    height: auto;
+    background-color: #DDD9CE;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    
+    padding: 20px;
+}
+
+

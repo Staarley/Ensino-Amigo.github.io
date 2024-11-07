@@ -1,0 +1,307 @@
+html {
+    touch-action: manipulation;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: var(--branco);
+    overflow-x: hidden;
+}
+
+:root {
+    --azul: #5271ff;
+    --amarelo: #ffcc00;
+    --vermelho: #ff5757;
+    --branco: #fff;
+    --preto: #000000;
+    --azul-escuro: #161834;
+    --azul-claro: #38b6ff;
+    --verde: #00bf63;
+}
+
+.ajuste {
+    display: none;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--branco);  
+}
+
+.linhaVermelha {
+    position: relative;
+    width: 20px;
+    height: 100%;
+    background-color: var(--vermelho);
+}
+
+nav {
+    position: relative;
+    top: -98%;
+    margin-left: 20px;
+    width: 75%;
+    height: 60px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 12px 25px;
+    box-shadow: -5px 5px 10px rgb(178, 178, 178);
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: 0.3s ease;
+    margin-right: 20px;
+}
+
+button:hover {
+    background-color: var(--branco);
+}
+
+button:active {
+    background-color: rgb(219, 219, 219);
+    transform: translateX(2px);
+}
+
+button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btnAluno {
+    margin-left: 29%;
+    background-color: var(--azul-claro);
+}
+
+.btnAluno:hover {
+    color: var(--azul-claro);
+}
+
+.btnInicio {
+    background-color: var(--azul);
+}
+
+.btnInicio:hover {
+    color: var(--azul);
+}
+
+.btnIniciaQuestionario {
+    background-color: var(--verde);
+}
+
+.btnIniciaQuestionario:hover {
+    color: var(--verde);
+}
+
+.btnSair {
+    background-color: var(--amarelo);
+}
+
+.btnSair:hover {
+    color: var(--amarelo);
+}
+
+.btnCadastro {
+    background-color: var(--vermelho);
+    padding: 11.5px 25px;
+    box-shadow: -5px 5px 10px rgb(178, 178, 178);
+    color: white;
+    font-size: 12px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.btnCadastro a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+}
+
+.btnCadastro:hover {
+    width: 200px;
+    height: 73px;
+    padding: 16px 25px;
+    margin-top: 68px;
+    background-color: var(--branco);
+    color: var(--vermelho);
+    border-radius: 10px;
+}
+
+.btnCadastro:hover .lstCadastros {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.lstCadastros {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    align-items: center;
+    display: none;
+    font-size: 14px;
+}
+
+.lstCadastros li {
+    padding: 6px 19px;
+    color: var(--vermelho);
+    width: 100%;
+    text-align: center;
+}
+
+.lstCadastros li a {
+    color: var(--vermelho);
+    text-decoration: none;
+}
+
+.lstCadastros li:hover {
+    background-color: rgb(228, 228, 228);
+    color: var(--vermelho);
+}
+
+.arcoIris {
+    position: relative;
+    width: 23.5%;
+    height: 45%;
+    top: -110.4%;
+    right: -76.5%;
+    background-color: transparent;
+}
+
+.azul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 100%;
+    background-color: var(--azul);
+}
+
+.amarelo {
+    position: relative;
+    width: 85%;
+    height: 80%;
+    right: -15%;
+    border-bottom-left-radius: 100%;
+    background-color: var(--amarelo);
+}
+
+.vermelho {
+    position: relative;
+    width: 85%;
+    height: 80%;
+    right: -15%;
+    border-bottom-left-radius: 100%;
+    background-color: var(--vermelho);
+}
+
+.branco {
+    position: relative;
+    width: 78%;
+    height: 73%;
+    right: -22%;
+    border-bottom-left-radius: 100%;
+    background-color: var(--branco);
+}
+
+.logo {
+    position: absolute;
+    width: 500px;
+    margin-left: 36%;
+    margin-top: -1250px;
+}
+
+.areaSelect {
+    position: absolute;
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    top: 30%;
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: -5px 5px 10px rgb(178, 178, 178);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.areaConsulta {
+    position: relative;
+    width: 92%;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow-y: auto;
+    padding: 20px;
+    color: var(--branco);
+}
+
+.styledTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.styledTable th, .styledTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.styledTable th {
+    position: relative;
+    background-color: var(--azul);
+    color: white;
+    font-weight: bold;
+    margin-left: 20%;
+}
+
+.styledTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.viewButton {
+    padding: 8px 16px;
+    color: white;
+    background-color: var(--verde);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.viewButton:hover {
+    background-color: var(--azul-claro);
+}
+
+.message {
+    font-size: 16px;
+    color: var(--vermelho);
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    color: var(--azul-escuro);
+    margin-bottom: 20px;
+}

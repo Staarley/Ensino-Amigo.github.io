@@ -1,0 +1,542 @@
+html {
+    touch-action: manipulation;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: var(--branco);
+    overflow-x: hidden;
+}
+
+:root {
+    --azul: #5271ff;
+    --amarelo: #ffde59;
+    --vermelho: #ff5757;
+    --branco: #fff;
+    --preto: #000000;
+    --azul-escuro: #161834;
+    --azul-claro: #38b6ff;
+    --verde: #00bf63;
+}
+
+.ajuste{
+    display: none;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--branco);  
+}
+
+.linhaVermelha {
+    position: relative;
+    width: 30px;
+    height: 100%;
+
+    background-color: var(--vermelho);
+}
+
+button{
+    box-shadow: -5px 5px 10px rgb(178, 178, 178);
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    top: 0;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--vermelho);
+    margin: 5px auto;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    gap: 15px;
+    height: 100%;
+}
+
+.btnNav {
+    padding: 12px 35px;
+    color: white;
+    font-size: 14px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: bolder;
+    position: relative;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnNav:hover {
+    transform: scale(1.02);
+}
+
+.btnNav a {
+    text-decoration: none;
+    color: white;
+}
+
+.btnNav a:hover {
+    background-color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    color: white;
+    border: 2px solid transparent;
+    font-size: 14px;
+    font-weight: bolder;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.055);
+    background-color: inherit;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 20px;
+}
+
+.dropdown-content a { 
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    border-radius: 20px;
+    color: inherit;
+    font-weight: bold;
+    border: 2px solid inherit;
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+
+    z-index: 10;
+}
+
+.dropdown:hover .btnInicio {
+    background-color: white;
+    color: var(--azul);
+}
+
+.dropdown:hover .btnCadastro {
+    background-color: white;
+    color: var(--verde);
+}
+
+.cadastro-dropdown a:hover {
+    background-color: white;
+    color: var(--verde);
+}
+
+/* Botoes */
+.btnQuest {
+    border: 2px solid transparent;
+    background-color: var(--vermelho);
+    color: white;
+}
+
+.btnAlunos {
+    border: 2px solid transparent;
+    background-color: var(--azul-claro);
+    color: var(--branco);
+}
+
+.btnInicio {
+    border: 2px solid transparent;
+    background-color: white;
+    color: var(--azul);
+}
+
+.btnVermelho{
+    border: 2px solid transparent;
+    background-color: var(--vermelho);
+    color: var(--branco);
+}
+
+.inicio-dropdown {
+    background-color: var(--azul);
+}
+
+.btnCadastro {
+    border: 2px solid transparent;
+    background-color: var(--verde);
+    color: white;
+}
+
+.cadastro-dropdown {
+    background-color: var(--verde);
+}
+
+/* Adicionando hover específico para cada botão */
+.btnQuest:hover {
+    border: 2px solid transparent;
+    background-color: var(--branco);
+    color: var(--vermelho);
+}
+
+.btnAlunos:hover {
+    background-color: white;
+    color: var(--azul-claro);
+}
+
+.btnInicio:hover {
+    background-color: white;
+    color: var(--azul);
+}
+
+.btnVermelho:hover {
+    background-color: var(--branco);
+    color: var(--vermelho);
+}
+
+.btnCadastro:hover {
+    color: var(--verde);
+}
+.cadastro-dropdown a:hover {
+    color: var(--verde);
+}
+
+.btnInicio:hover {
+    color: var(--azul);
+}
+
+.btnCadastro:hover {
+    color: var(--verde);
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        padding: 12px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btnNav {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.area{
+    top: 20px;
+}
+
+.areaLogo {
+    position: absolute;
+    width: 1000px;
+    height: 120px;
+    margin: 20px auto;
+
+    margin-top: -66%;
+    margin-left: 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    
+}
+
+.logo{
+    background-color: transparent;
+    position: relative;
+    width: 150px;
+    margin-left: -0%;
+}
+
+.lblBemVindo{
+    position: relative;
+    color: var(--vermelho);
+}
+
+
+.arcoIris{
+    position: relative;
+
+    width: 23.5%;
+    height: 45%;
+
+    top: -110.4%;
+    right: -76.5%;
+
+    background-color: transparent;
+}
+
+.azul{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border-bottom-left-radius: 100%;
+
+    background-color: var(--azul);
+}
+
+.amarelo{
+    position: relative;
+
+    width: 85%;
+    height: 80%;
+
+    right: -15%;
+
+    border-bottom-left-radius: 100%;
+
+    background-color: var(--amarelo);
+}
+
+.vermelho{
+    position: relative;
+
+    width: 85%;
+    height: 80%;
+
+    right: -15%;
+
+    border-bottom-left-radius: 100%;
+
+    background-color: var(--vermelho);
+}
+
+.branco{
+    position: relative;
+
+    width: 78%;
+    height: 73%;
+
+    right: -22%;
+
+    border-bottom-left-radius: 100%;
+
+    background-color: var(--branco);
+}
+
+.areaQuest{
+    position: absolute;
+    width: 150vh;
+    height: 80%;
+    margin-left: 5%;
+    margin-top: -58%;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+    overflow-x: hidden; /* Evita a rolagem horizontal */
+
+
+}
+
+.cardQuestionario{
+    width: 350px;
+    height: 400px;
+
+    background-color: transparent;
+    box-shadow: -5px 5px 10px rgb(178, 178, 178);
+    border-radius: 10px;
+
+    margin-left: 20px;
+
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.cardQuestionario .foto{
+    width: 100%;
+    height: 50%;
+
+    background-color: white;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    z-index: -2;
+}
+
+.cardQuestionario .descricao{
+    width: 100%;
+    height: 50%;
+
+    background-color: aliceblue;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arcoIrisCard{
+    position: relative;
+
+
+    width: 50%;
+    height: 70%;
+
+    left: 50%;
+
+    background-color: transparent;
+
+    z-index: -1;
+}
+
+.azulCard{
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--azul);
+
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 10px;
+}
+
+.amareloCard{
+    width: 80%;
+    height: 75%;
+
+    background-color: var(--amarelo);
+
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 10px;
+
+    margin-left: 20%;
+}
+
+.vermelhoCard{
+    width: 75%;
+    height: 70%;
+
+    background-color: var(--vermelho);
+
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 20px;
+
+    margin-left: 25%;
+}
+
+.brancoCard{
+    width: 65%;
+    height: 65%;
+
+    background-color: var(--branco);
+
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 10px;
+
+    margin-left: 35%;
+}
+
+img{
+    position: absolute;
+    width: 170px;
+
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+.nomeQuestionario{
+    text-align: center;
+    color: var(--vermelho);
+}
+
+.btnIniciarQuestionario {
+    padding: 12px 50px;
+    box-shadow: -5px 5px 10px rgb(178, 178, 178);
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bolder;
+    transition: 0.3s ease;
+
+    background-color: var(--vermelho);
+}
+
+.btnIniciarQuestionario:hover {
+    background-color: var(--branco);
+    color: var(--vermelho);
+}
+
+.btnIniciarQuestionario:active {
+    background-color: rgb(219, 219, 219);
+    transform: translateX(2px);
+}
+
+a{
+    text-decoration: none;
+}
+
+
